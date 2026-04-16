@@ -479,7 +479,7 @@ var SA=SL.split("\n");SA.forEach((s,i)=>{SA[i]=s.split(/(?:^|&).*?(?:=|$)/,4);SA
 for (i=SA.length;i>0;) {i--;if (SA[i].length>3) if (SA[i][3]) continue; SA.splice(i,1)};SL=SA[0][0];for (i=1;i<SA.length;i++) SL+="\n"+SA[i][0];
 function CSL() {navigator.clipboard.writeText(SL).then(()=>{alert("Прокси помещены в буфер! \u{1F609}")},()=>{alert("Невозможно скопировать прокси!")})};
 function CS(s) {navigator.clipboard.writeText(s).then(()=>{alert("Скопировано! \u{270C}")},()=>{alert("Не удалось скопировать!")})};
-function CH() {/*this.style.color="red";this.style.cursor="pointer"*/alert("test CH")};function CL() {/*this.style.color="";this.style.cursor="default"*/alert("test CL")};
-var b=document.querySelector("#l");SA.forEach((s)=>{b.appendChild(document.createElement("li")).insertAdjacentHTML("beforeend",'<a href="'+s[0]+'">ссылка</a> | <a onmouseover=CH() onmouseout=CL() onclick=CS("'+s[1]+'")>сервер</a> | <a onmouseover=CH() onmouseout=CL() onclick=CS("'+s[2]+'")>порт</a> | <a onmouseover=CH() onmouseout=CL() onclick=CS("'+s[3]+'")>ключ</a>')});
+function CH(c) {c.style.color="red";c.style.cursor="pointer"};function CL(c) {c.style.color="";c.style.cursor="default"};
+var b=document.querySelector("#l");SA.forEach((s)=>{b.appendChild(document.createElement("li")).insertAdjacentHTML("beforeend",'<a href="'+s[0]+'">ссылка</a> | <a onmouseover=CH(this) onmouseout=CL(this) onclick=CS("'+s[1]+'")>сервер</a> | <a onmouseover=CH(this) onmouseout=CL(this) onclick=CS("'+s[2]+'")>порт</a> | <a onmouseover=CH(this) onmouseout=CL(this) onclick=CS("'+s[3]+'")>ключ</a>')});
 </script>
 </body></html>
